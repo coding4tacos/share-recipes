@@ -20,7 +20,7 @@ class Recipe {
     private $img;
     
     
-    public function __construct($id,$name,$description,$ingredients,$userId,$instructions){
+    public function __construct($id,$name,$description,$ingredients,$userId,$instructions, $img){
         $this->id=$id;
         $this->name=$name;
         $this->description=$description;
@@ -28,6 +28,7 @@ class Recipe {
         $this->userId=$userId;
         $this->instructions=$instructions;
         /* add the images */ 
+        $this->img=$img;
         
     }
     

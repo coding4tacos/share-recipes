@@ -56,7 +56,14 @@ body {
      max-width: 1100px;
      margin: 0 auto;
 }
- 
+
+@media only screen and (max-width: 1100px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+
 section,
 main {
      padding: 1rem 0;
