@@ -1,4 +1,4 @@
-//*<?php
+<?php
 
 /*
  Modelo o Entidad o DTO =Data Transfer Object

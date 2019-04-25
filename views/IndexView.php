@@ -14,24 +14,6 @@ global $data;
 
 <body>
 
-    <!-- TO DO 
-        
-        pagina principal: buscador que manda a resultados de busqueda
-        
-        pagina de registro
-        
-        pagina de login
-        
-        pagina 'nueva receta' ---- Need to do 
-        
-        Timestamps in DB ----- Need to do
-
-        INSPIRATION: https://www.supercook.com/#/recipes
-        https://www.myrecipes.com/
-        https://www.allrecipes.com/
-        
-        
-        -->
     <header class="text-center">
         <h1>Share Recipes</h1>
     </header>
@@ -73,7 +55,7 @@ global $data;
                 <?php } ?>
             </div><!-- End Featured Recipes -->
             <div class="add-recipe text-center">
-                <a href="login.html">login to add a new recipe</a>
+                <a href="#">login</a> or <a href="Register.php">register</a> to add a new recipe
             </div>
         </div>
     </main>
