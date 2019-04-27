@@ -42,7 +42,7 @@ and open the template in the editor.
                               <label for="password">Password</label>
                               <input type="password" placeholder="password" />
                          </div>
-                         <div class="form-field">
+                         <div class="text-center">
                               <input type="submit" value="Login" class="btn" />
                          </div>
                          <p class="message">Already registered? <a href="login.html">Login</a></p>

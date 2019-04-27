@@ -31,8 +31,8 @@ global $data;
             <!-- Add Search form -->
             <h3 class="text-center">Make something delicious tonight!</h3>
             <form class="text-center">
-                <input type="search" placeholder="Ex: lasagna">
-                <input type="submit" value="Search">
+                <input type="search" placeholder="Ex: lasagna" class="input">
+                <input type="submit" value="Search" class="btn">
             </form>
         </div>
     </section>
