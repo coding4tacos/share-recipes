@@ -43,7 +43,7 @@ and open the template in the editor.
                               <input type="password" placeholder="password" />
                          </div>
                          <div class="text-center">
-                              <input type="submit" value="Login" class="btn" />
+                              <input type="submit" value="Sign Up" class="btn" />
                          </div>
                          <p class="message">Already registered? <a href="login.html">Login</a></p>
                     </form>
