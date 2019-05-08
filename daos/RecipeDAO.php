@@ -5,7 +5,7 @@ DAO = Data Access Object
  * 
  * Contiene la inteligencia necesaria para comunicarse con la base de datos.
  * 
- * IMplementaresmos el paradigma CRUD = Create Read Update Delete
+ * Implementaresmos el paradigma CRUD = Create Read Update Delete
  */
 
 /**
@@ -21,6 +21,12 @@ class RecipeDAO {
     
     public function __construct(){
         $this->con=DB::getDbCon();
+    }
+    
+    public function create($recipe) {
+        $sql="insert into recipes ( name, description, ingredients, userId, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}',
+        '{$recipe->getUserId()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}'}";
+        $this->con->query($sql);
     }
     
     public function read($id){

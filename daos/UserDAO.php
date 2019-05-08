@@ -7,13 +7,13 @@ class UserDAO {
     private $con;
     
     
-    function __construct($con) {
-        $this->con = $con;
+    function __construct() {
+        $this->con = DB::getDbCon();
     }
 
     public function create($user,$password) {
-        $password=hash("sha256",SALT+$password);
-        $sql="insert int users (email,username,password) values ('$email','$username','$password')";
+        $password=hash("sha256",self::SALT.$password);
+        $sql="insert into users (email,username,password) values ('{$user->getEmail()}','{$user->getUsername()}','$password')";
         $this->con->query($sql);
         
     }
@@ -30,14 +30,14 @@ class UserDAO {
     }
     
     
-     public function authenticate($email,$password) {
+     public function authenticate($username,$password) {
         $user=null;
-        $password=hash("sha256",SALT+$password);
-        $sql="select * from users where email='$email' and password='$password'";
+        $password=hash("sha256",self::SALT.$password);
+        $sql="select email from users where username='$username' and password='$password'";
         $rs=$this->con->query($sql);
         $r=$rs->fetch_assoc();
         if($r!==null){
-            $user=new User($r["email"],$r["username"]);
+            $user=new User($r["email"],$username);
         }
         $rs->free();
         return $user;

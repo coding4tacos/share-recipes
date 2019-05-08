@@ -27,7 +27,6 @@ class Recipe {
         $this->ingredients=$ingredients;
         $this->userId=$userId;
         $this->instructions=$instructions;
-        /* add the images */ 
         $this->img=$img;
         
     }

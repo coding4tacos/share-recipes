@@ -1,32 +1,6 @@
-<?php
-global $data;
-?><!DOCTYPE html>
-<html>
+<?php include 'Header.php'; ?>
 
-<head>
-    <title>Prototipo</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Dancing+Script" rel="stylesheet">
-</head>
-
-<body>
-
-    <header class="text-center">
-        <h1>Share Recipes</h1>
-    </header>
-    <nav>
-        <div class="container">
-            <ul class="flex nav-links">
-                <li><a href="/index.html" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Categories</a></li>
-                <li><a href="./new-recipe.html" class="nav-link">Add Recipe</a></li>
-            </ul>
-        </div>
-    </nav>
-    <section class="recipe-search">
+<section class="recipe-search">
         <div class="container">
             <!-- Add Search form -->
             <h3 class="text-center">Make something delicious tonight!</h3>
@@ -60,6 +34,6 @@ global $data;
         </div>
     </main>
 
-</body>
+<?php include 'Footer.php'; ?>
 
-</html>
+
