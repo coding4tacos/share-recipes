@@ -29,7 +29,7 @@
                 <?php } ?>
             </div><!-- End Featured Recipes -->
             <div class="add-recipe text-center">
-                <a href="#">login</a> or <a href="Register.php">register</a> to add a new recipe
+                <a href="Login.php">login</a> or <a href="Register.php">register</a> to add a new recipe
             </div>
         </div>
     </main>

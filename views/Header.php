@@ -1,6 +1,9 @@
 
 <?php
-session_start();
+  if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
 
 global $data;
@@ -25,7 +28,7 @@ global $data;
     <nav>
         <div class="container">
             <ul class="flex nav-links">
-                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="/index.php" class="nav-link">Home</a></li>
                 <li><a href="#" class="nav-link">Categories</a></li>
                 <?php if(isset($_SESSION['user'])) : ?>
                     <li><a href="./new-recipe.html" class="nav-link">Add Recipe</a></li>

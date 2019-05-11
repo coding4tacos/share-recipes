@@ -112,6 +112,7 @@ a.btn {
 }
 
 .form-field {
+    display: block;
     margin-bottom: .5rem;
 }
 
@@ -242,9 +243,13 @@ form.login-form {
     background-color: #fff;
 }
 
-form.login-form input[type="text"],
-form.login-form input[type="password"]{
-    float: right;
+form.login-form .form-field {
+   text-align: center;
+}
+
+form.login-form .form-field input[type="text"],
+form.login-form .form-field input[type="password"] {
+    padding: .3rem;
 }
 
 footer {
