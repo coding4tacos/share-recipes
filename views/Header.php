@@ -31,7 +31,7 @@ global $data;
                 <li><a href="/index.php" class="nav-link">Home</a></li>
                 <li><a href="#" class="nav-link">Categories</a></li>
                 <?php if(isset($_SESSION['user'])) : ?>
-                    <li><a href="./new-recipe.html" class="nav-link">Add Recipe</a></li>
+                <li><a href="./AddRecipe.php" class="nav-link">Add Recipe</a></li>
                     <li><a href="#" class="nav-link">My Account</a></li>
                     <li><a href="#" class="nav-link">Logout</a></li>
                  <?php endif; ?>

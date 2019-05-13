@@ -66,13 +66,18 @@ body {
     }
 }
 
-.input {
-    padding: .4rem 0;
+.search-input {
     border-radius: 5%;
-    border: 2px solid rgba(57, 126, 56, .7);
 }
 
-.input:focus {
+input,
+textarea {
+    padding: .4rem 0;
+    border: 2px solid rgba(57, 126, 56, .5);
+}
+
+input:focus,
+textarea:focus {
     border: 2px solid rgba(57, 126, 56, 1);
     outline: none;
 }
@@ -109,6 +114,12 @@ a.btn {
     background-color: rgba(57, 126, 56, 1);
     box-shadow: 1px 1px 2px #444;
     cursor: pointer;
+}
+
+.btn-large {
+    font-size: 1.3rem;
+    padding: .4rem 2rem;
+    margin: .5rem 0;
 }
 
 .form-field {
@@ -155,15 +166,15 @@ ul.nav-links {
 
 .nav-links li {
     flex: 1 1 20%;
-    padding: 1rem 2rem;
+    min-width: 150px;
     text-align: center;
-
 }
 
 .nav-links li a.nav-link {
     text-decoration: none;
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1rem .5rem;
+    display: block;
 }
 
 /** Search **/
@@ -250,6 +261,27 @@ form.login-form .form-field {
 form.login-form .form-field input[type="text"],
 form.login-form .form-field input[type="password"] {
     padding: .3rem;
+}
+
+/* Add Recipe */
+.add-recipe-form label {
+    display: block;
+}
+
+.add-recipe-form input#name {
+    width: 50%;
+    min-width: 200px;
+}
+
+.add-recipe-form textarea {
+    width: 100%;
+    min-height: 100px;
+}
+
+.add-recipe input[type="file"] {
+    /* border: 1px solid rgb(57, 126, 56); */
+    padding: .5rem;
+    padding-left: 0;
 }
 
 footer {

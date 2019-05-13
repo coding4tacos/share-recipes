@@ -8,15 +8,17 @@ class AddRecipeController{
        $view=new View();
        session_start();
        if(isset($_SESSION['user'])) {
-            $view->render("AddRecipe.php");
+            $view->render("AddRecipeView.php");
+          
        }
        else{
            // pagina que diga que no esta logeado el usuario
+          
        }
     }
     
 }
 
-$c=new DoRegisterController(); 
+$c=new AddRecipeController(); 
 $c->execute();
 

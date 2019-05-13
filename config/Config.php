@@ -14,7 +14,7 @@ class AutoLoader{
         "Recipe" =>"models/Recipe.php",
         "View" => "views/View.php",
         "UserDAO" => "daos/UserDAO.php",
-        "User" => "models/User.php"
+        "User" => "models/User.php",
     ];
 
     public static function load($className){
