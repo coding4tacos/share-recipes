@@ -147,12 +147,6 @@ nav {
     background-color: rgb(57, 126, 56);
 }
 
-form {
-    padding: .5rem 0;
-}
-
-main {
-}
 
 ul.nav-links {
     padding: 0; 
@@ -175,6 +169,32 @@ ul.nav-links {
     color: #fff;
     padding: 1rem .5rem;
     display: block;
+}
+
+.nav-links li a.nav-link:hover {
+    color: rgb(245, 245, 220, .9);
+    transition: color 80ms ease-in-out; /* same as ::after, which is below this  */
+}
+
+
+nav ul li {
+     position: relative;
+}
+
+
+nav ul li::after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 3px;
+  left: 50%;
+  bottom:0;
+  background-color: rgb(245, 245, 220);
+  transition: all 80ms ease-in-out;
+}
+nav ul li:hover::after{
+  width: 100%;
+  left: 0;
 }
 
 /** Search **/
@@ -222,6 +242,11 @@ ul.nav-links {
 .add-recipe {
     padding: 2rem 0;
 }
+
+form {
+    padding: .5rem 0;
+}
+
 
 main.login {
     padding-top: 5rem;
