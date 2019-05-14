@@ -253,7 +253,8 @@ main.login {
 }
 
 
-.login-form-wrap {
+.login-form-wrap,
+.register-form-wrap {
     background-color: #fff;
     padding: 1.5rem;
     margin: 2rem;
@@ -262,6 +263,14 @@ main.login {
     border: 1px solid rgb(57, 126, 56);
     border-radius: 1%;
     box-shadow: 1px 1px 3px #ccc;
+}
+
+@media only screen and (max-width: 600px) {
+    .login-form-wrap,
+    .register-form-wrap {
+        width: 100%;
+        max-width: 350px;
+    }
 }
 
 .recipe-form-wrap {
@@ -275,11 +284,27 @@ main.login {
     box-shadow: 1px 1px 3px #ccc;
 }
 
-form.login-form {
+form.login-form,
+form.register-form {
     background-color: #fff;
 }
 
-form.login-form .form-field {
+form.register-form label {
+    float: left;
+    padding: .4rem 0;
+    color: #555;
+    min-width: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    form.register-form label {
+        float: none;
+        display: block;
+    }
+}
+
+form.login-form .form-field,
+form.register-form .form-field {
    text-align: center;
 }
 
