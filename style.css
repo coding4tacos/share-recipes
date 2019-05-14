@@ -339,7 +339,7 @@ form.login-form .form-field input[type="password"] {
 }
 
 .add-recipe input[type="file"] {
-    /* border: 1px solid rgb(57, 126, 56); */
+    border: none;
     padding: .5rem;
     padding-left: 0;
 }

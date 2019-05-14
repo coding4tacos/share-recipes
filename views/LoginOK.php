@@ -4,10 +4,7 @@ $user=$_SESSION["user"];
 <?php include 'Header.php'; ?>
      <main class="login">
           <div class="container">
-               <div class="">
-                   <p class="logged-in-welcome-msg">Welcome <?= $user->getUsername(); ?></p>
-              
-               </div>
+                   <p class="text-center">Welcome back <?= $user->getUsername(); ?></p>!
           </div>
      </main>
 
