@@ -4,6 +4,7 @@
                <div class="register-form-wrap">
                     <form class="register-form" action="DoRegister.php" method="POST" id="register-form">
                         <h2 class="pad-bottom text-center">Sign Up!</h2>
+                        <div class="error-message"></div>
                         <div class="form-field">
                              <label for="username">Email</label>
                              <input type="text" name="email" id="email" placeholder="ex: john@something.com" />
