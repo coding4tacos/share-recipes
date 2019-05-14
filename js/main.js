@@ -1,5 +1,6 @@
 // variables
-const registerPage = document.querySelector('main.register');
+const registerPage = document.querySelector('main.register'),
+      loginPage = document.querySelector('main.login');
 
 (function() {
    if(registerPage) {
@@ -14,7 +15,6 @@ const registerPage = document.querySelector('main.register');
         function validate(e) {
             if(emailInput.value === '' || !emailInput.value.includes('@') || !emailInput.value.includes('.') || emailInput.value.length < 5) {
                 e.preventDefault();
-                console.log('email issues!');
                 emailInput.style.border = '1px solid red';
                 
                 errorMessage.textContent = '*Please add a valid email.';
@@ -22,7 +22,6 @@ const registerPage = document.querySelector('main.register');
                 
             } else if(usernameInput.value === '' || usernameInput.value.length < 2) {
                 e.preventDefault();
-                console.log('username issues!');
                 usernameInput.style.border = '1px solid red';
                 
                 errorMessage.textContent = '*Usernames must be at least 3 characters.';
@@ -30,18 +29,32 @@ const registerPage = document.querySelector('main.register');
                 
             } else if(passwordInput.value === '' || passwordInput.value.length < 5) {
                 e.preventDefault();
-                console.log('password issues!');
                 passwordInput.style.border = '1px solid red';
                 
                 errorMessage.textContent = '*Passwords must be at least 5 characters.';
-            }
+            }     
         }
-       registerForm.addEventListener("submit", validate);
-       
-       console.log('register pg!');
-      
-   } else {
-       console.log('not reg page');
-   }
-
+        registerForm.addEventListener("submit", validate);
+    }
+        
+        
+        // Login Page
+        if(loginPage) {
+            const loginForm = document.getElementById('login-form'),
+             usernameInput = document.getElementById('username'),
+             passwordInput = document.getElementById('password'),
+             errorMessage = document.querySelector('.error-message');
+     
+             function validate(e) {
+                 if(usernameInput.value === '') {
+                    e.preventDefault();
+                    usernameInput.style.border = '1px solid red';
+                 } else if(passwordInput.value === '') {
+                    e.preventDefault();
+                    passwordInput.style.border = '1px solid red';
+                 }
+             }
+             loginForm.addEventListener("submit", validate);  
+        }
+        // END VALIDATION
 })();

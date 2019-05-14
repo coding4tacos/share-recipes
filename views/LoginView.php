@@ -2,7 +2,7 @@
      <main class="login">
           <div class="container">
                <div class="login-form-wrap">
-                    <form class="login-form" action="DoLogin.php" method="POST">
+                    <form class="login-form" action="DoLogin.php" method="POST" id="login-form">
                          <h2 class="pad-bottom text-center">Login</h2>
                          <div class="form-field">
                               <input type="text" name="username" id="username" placeholder="username" />
