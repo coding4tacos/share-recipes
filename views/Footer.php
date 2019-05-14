@@ -3,6 +3,9 @@
     <p class="text-center">&copy; <?php echo date("Y"); ?></p>
 </footer>
 
+<!-- Scripts -->
+<script src="./js/main.js"></script>
+
 </body>
 
 </html>

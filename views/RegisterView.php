@@ -1,8 +1,8 @@
 <?php include 'Header.php'; ?>
-     <main class="login">
+     <main class="register">
           <div class="container">
                <div class="register-form-wrap">
-                    <form class="register-form" action="DoRegister.php" method="POST">
+                    <form class="register-form" action="DoRegister.php" method="POST" id="register-form">
                         <h2 class="pad-bottom text-center">Sign Up!</h2>
                         <div class="form-field">
                              <label for="username">Email</label>
