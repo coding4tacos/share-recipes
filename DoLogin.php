@@ -16,7 +16,7 @@ class DoLoginController{
             $view->render("LoginOK.php");
         }
         else{
-            $view->render("LoginERROR.php");
+            $view->render("LoginError.php");
         }
         
     }

@@ -1,8 +1,11 @@
 <?php include 'Header.php'; ?>
      <main class="add-recipe">
           <div class="container">
+              <div class="section-header">
+                    <h3>Thanks for contributing your recipe! We can't wait to try it.</h3>
+                </div>
                <div class="recipe-form-wrap">
-                   <form class="add-recipe-form" action="SaveRecipe.php" method="POST" enctype="multipart/form-data">
+                    <form class="add-recipe-form" action="SaveRecipe.php" method="POST" enctype="multipart/form-data">
                          <div class="form-field">
                              <label for="name">Name</label>
                              <input type="text" name="name" id="name">

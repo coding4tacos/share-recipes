@@ -93,6 +93,11 @@ main {
      text-align: center;
 }
 
+.section-header h4 {
+     padding-top: 2rem;
+}
+
+
 .text-center {
     text-align: center;
 }
@@ -249,7 +254,7 @@ form {
 
 
 main.login {
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 
 
