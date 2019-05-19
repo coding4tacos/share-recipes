@@ -27,8 +27,8 @@
                          </div>
                        <div class="form-field">
                            image field
-                            <label for="images">Recipe image:</label>
-                            <input type="file" name="images" id="images">
+                            <label for="image">Recipe image:</label>
+                            <input type="file" name="image" id="image">
                        </div>
                        <div class="form-field">
                            <input type="submit" value="Submit" class="btn btn-large">
