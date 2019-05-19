@@ -63,10 +63,6 @@ class Recipe {
         $this->ingredients = $ingredients;
     }
 
-    function setUserId($userId) {
-        $this->userId = $userId;
-    }
-
     function setInstructions($instructions) {
         $this->instructions = $instructions;
     }

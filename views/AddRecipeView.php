@@ -17,10 +17,11 @@
                              <label for="description">Description</label>
                              <textarea for="description" name="description" id="description"></textarea>
                          </div>
-                            <div class="form-field">
+                         <div class="form-field">
                              <label for="ingredients">Ingredients</label>
                              <textarea for="ingredients" name="ingredients" id="ingredients"></textarea>
                          </div>
+                      
                          <div class="form-field">
                              <label for="instructions">Instructions</label>
                              <textarea for="instructions" name="instructions" id="instructions"></textarea>

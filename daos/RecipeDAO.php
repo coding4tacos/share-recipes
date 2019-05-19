@@ -8,12 +8,6 @@ DAO = Data Access Object
  * Implementaresmos el paradigma CRUD = Create Read Update Delete
  */
 
-/**
- * Description of RecipeDAO
- *
- * @author taylo
- */
-
 
 class RecipeDAO {
    
@@ -24,8 +18,9 @@ class RecipeDAO {
     }
     
     public function create($recipe) {
-        $sql="insert into recipes ( name, description, ingredients, userId, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}',
-        '{$recipe->getUserId()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}'}";
+        $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()["name"]}'}";
+       // var_dump($sql);
+        // var_dump($recipe->getImg()['name']);
         $this->con->query($sql);
     }
     
