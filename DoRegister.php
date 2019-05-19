@@ -1,9 +1,8 @@
 <?php
 
-
 ini_set("display_errors",true);
 include_once("config/Config.php");
-class DoRegisterController{ // deberia tenener el mismo nombre tal como esta nombrado el archivo
+class DoRegisterController { // deberia tenener el mismo nombre tal como esta nombrado el archivo
     
     public function execute(){
         $view=new View();

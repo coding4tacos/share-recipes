@@ -1,3 +1,6 @@
+<?php
+    $user=$_SESSION["user"];
+?>
 <?php include 'Header.php'; ?>
      <main class="add-recipe">
           <div class="container">
@@ -23,8 +26,9 @@
                              <textarea for="instructions" name="instructions" id="instructions"></textarea>
                          </div>
                        <div class="form-field">
-                            <label for="recipe_image">Recipe image:</label>
-                            <input type="file" id="recipe_image" name="recipe_image" id="recipe_image">
+                           image field
+                            <label for="images">Recipe image:</label>
+                            <input type="file" name="images" id="images">
                        </div>
                        <div class="form-field">
                            <input type="submit" value="Submit" class="btn btn-large">

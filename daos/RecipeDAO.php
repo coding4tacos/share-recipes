@@ -35,7 +35,7 @@ class RecipeDAO {
         $rs=$this->con->query($sql);
         $r=$rs->fetch_assoc();
         if($r!==null){
-            $recipe=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"],$r["img"]);
+            $recipe=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
         }
         $rs->free();
         return $recipe;
@@ -47,7 +47,7 @@ class RecipeDAO {
         $rs=$this->con->query($sql);
         $recipes=[];
         while($r=$rs->fetch_assoc()){
-            $recipes[]=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"],$r["img"]);
+            $recipes[]=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
             
         }
         $rs->free();

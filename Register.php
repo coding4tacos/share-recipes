@@ -2,7 +2,7 @@
 
 ini_set("display_errors",true);
 include_once("config/Config.php");
-class RegisterController{
+class Register{
     
     public function execute(){
         $view=new View();
@@ -11,7 +11,7 @@ class RegisterController{
     
 }
 
-$c=new RegisterController(); 
+$c=new Register(); 
 $c->execute();
 
 
