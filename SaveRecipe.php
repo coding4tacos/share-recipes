@@ -8,6 +8,12 @@ if(isset($_SESSION["user"])) {
     echo 'nope';
 }
 
+if(isset($_FILES['images'])) {
+    echo 'its set!';
+} else {
+    echo 'noooo';
+}
+
 ini_set("display_errors",true);
 include_once("config/Config.php");
 class AddRecipeController{
@@ -15,7 +21,7 @@ class AddRecipeController{
     public function execute(){
         $view=new View();
         $dao=new RecipeDAO();  
-        $recipe=new Recipe($_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->getEmail(), $_POST["instructions"], $_POST["images"]);
+        $recipe=new Recipe($_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->getEmail(), /* userId */ $_SESSION["user"]->getEmail(), $_POST["instructions"], $_POST["images"]);
         $dao->create($recipe);
         $view->render("IndexView.php");
     }
