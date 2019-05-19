@@ -1,5 +1,6 @@
 
 <?php
+include './models/User.php';
 session_start();
 if(isset($_SESSION["user"])) {
     echo 'yup';
@@ -14,7 +15,7 @@ class AddRecipeController{
     public function execute(){
         $view=new View();
         $dao=new RecipeDAO();  
-        $recipe=new Recipe($_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->email, $_POST["instructions"], $_POST["images"]);
+        $recipe=new Recipe($_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->getEmail(), $_POST["instructions"], $_POST["images"]);
         $dao->create($recipe);
         $view->render("IndexView.php");
     }
