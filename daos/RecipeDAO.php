@@ -18,9 +18,7 @@ class RecipeDAO {
     }
     
     public function create($recipe) {
-        $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()["name"]}'}";
-       // var_dump($sql);
-        // var_dump($recipe->getImg()['name']);
+        $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}'}";
         $this->con->query($sql);
     }
     
@@ -30,7 +28,7 @@ class RecipeDAO {
         $rs=$this->con->query($sql);
         $r=$rs->fetch_assoc();
         if($r!==null){
-            $recipe=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
+            $recipe=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"], $r["instructions"], $r["img"]);
         }
         $rs->free();
         return $recipe;

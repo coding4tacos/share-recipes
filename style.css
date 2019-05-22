@@ -352,10 +352,13 @@ form.login-form .form-field input[type="password"] {
 footer {
     background-color: rgb(57, 126, 56);
     color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
-    padding: .5rem;
+    padding: 1rem;
     margin: 0;
 }
 
