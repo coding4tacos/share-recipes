@@ -18,8 +18,13 @@ class RecipeDAO {
     }
     
     public function create($recipe) {
-        $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}'}";
+        $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}')";
+        
         $this->con->query($sql);
+        $sql="select last_insert_id() as id";
+        $rs=$this->con->query($sql);
+        $r=$rs->fetch_assoc();
+        $recipe->setId($r["id"]);
     }
     
     public function read($id){
@@ -45,6 +50,12 @@ class RecipeDAO {
         }
         $rs->free();
         return $recipes;
+    }
+    
+    public function update($recipe){
+        $sql="update recipes set name='{$recipe->getName()}',description='{$recipe->getDescription()}',ingredients='{$recipe->getIngredients()}', instructions='{$recipe->getInstructions()}', img='{$recipe->getImg()}' where id={$recipe->getId()}";
+        $this->con->query($sql);
+           
     }
     
     

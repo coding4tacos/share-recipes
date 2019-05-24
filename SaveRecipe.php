@@ -4,17 +4,6 @@ include './models/User.php';
 include './models/Recipe.php';
 
 session_start();
-if(isset($_SESSION["user"])) {
-    echo 'yup';
-} else {
-    echo 'nope';
-}
-
-if(isset($_FILES['image'])) {
-    echo 'its set!';
-} else {
-    echo 'noooo';
-}
 
 ini_set("display_errors",true);
 include_once("config/Config.php");
@@ -23,9 +12,18 @@ class AddRecipeController{
     public function execute(){
         $view=new View();
         $dao=new RecipeDAO();  
-       // $recipe=new Recipe($_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->getEmail(), $_SESSION["user"]->getEmail(), $_POST["instructions"], $_FILES['image']);
-        $recipe=new Recipe('Lasagna','description', 'so much stuff ingredients',9, 'somethin', 'instructions', 'someimage.jpg');
+        
+        $extension=pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION);
+         
+        
+        
+        $recipe=new Recipe(-1,$_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->getEmail(), $_POST["instructions"]);
         $dao->create($recipe);
+        
+        $recipe->setImg($recipe->getId().".".$extension);
+        $dao->update($recipe);
+        move_uploaded_file($_FILES["image"]["tmp_name"],"img/".$recipe->getImg());
+        
         $view->render("RecipeOK.php");
     }
     
