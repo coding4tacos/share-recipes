@@ -128,21 +128,28 @@ const registerPage = document.querySelector('main.register'),
                         warningMsg.textContent = null;
                     }, 3500);
                 
-                 } else if(recipeImage.files.length <= 0) {
+                 } /* 
+     *                // check for image
+                  else if(recipeImage.files.length <= 0) {
                     e.preventDefault();
                     
                     console.log(recipeImage.files);
                      console.log('length ' + recipeImage.files.length);
                     recipeImage.style.borderBottom = redBorder;
+                    warningMsg.textContent = '**Please add an image';
+
 
                     // reset after 2 seconds
                     setTimeout(function(){ 
                        // something
                     recipeImage.style.borderBottom = 'none';
+                    warningMsg.textContent = null;
                     }, 3500);
                  } 
+ * */
+                  
    }
-       recipeForm.addEventListener("submit", validateNewRecipe)       
+       recipeForm.addEventListener("submit", validateNewRecipe);
     }
          
          

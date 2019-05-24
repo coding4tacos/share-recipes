@@ -20,10 +20,21 @@ class RecipeDAO {
     public function create($recipe) {
         $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}')";
         
+        // $stmt = $mysqli->prepare("INSERT INTO recipes ( name, description, ingredients, instructions, img ) VALUES ( ?, ?, ?, ?, ?)");
+       //   $stmt->bind_param("ssssa", '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}');
+        // $stmt->execute();
+        
+        
+        
+        
         $this->con->query($sql);
         $sql="select last_insert_id() as id";
         $rs=$this->con->query($sql);
-        $r=$rs->fetch_assoc();
+        
+        
+       // $result = $stmt->get_result();  // instead of line above
+        // $r = $rs->fetch_assoc();
+         $r=$rs->fetch_assoc();
         $recipe->setId($r["id"]);
     }
     

@@ -24,7 +24,7 @@ class AddRecipeController{
         $dao->update($recipe);
         move_uploaded_file($_FILES["image"]["tmp_name"],"img/".$recipe->getImg());
         
-        $view->render("RecipeOK.php");
+        $view->render("ConfirmNewRecipe.php");
     }
     
 }

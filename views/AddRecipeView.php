@@ -28,7 +28,6 @@
                              <textarea for="instructions" name="instructions" id="instructions"></textarea>
                          </div>
                        <div class="form-field">
-                           image field
                             <label for="image">Recipe image:</label>
                             <input type="file" name="image" id="image">
                        </div>
