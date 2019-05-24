@@ -1,6 +1,7 @@
 // variables
 const registerPage = document.querySelector('main.register'),
-      loginPage = document.querySelector('main.login');
+      loginPage = document.querySelector('main.login'),
+      addRecipe = document.querySelector('main.add-recipe');
 
 (function() {
    if(registerPage) {
@@ -10,10 +11,7 @@ const registerPage = document.querySelector('main.register'),
              usernameInput = document.getElementById('username'),
              passwordInput = document.getElementById('password'),
              errorMessage = document.querySelector('.error-message');
-             
-        
-                          
-             
+       
         function validate(e) {
             if(emailInput.value === '' || !emailInput.value.includes('@') || !emailInput.value.includes('.') || emailInput.value.length < 5) {
                 e.preventDefault();
@@ -89,5 +87,64 @@ const registerPage = document.querySelector('main.register'),
              }
              loginForm.addEventListener("submit", validate);  
         }
+        
+        // Add Recipe Page
+        if(addRecipe) {
+        // variables
+        const recipeForm = document.getElementById('add-recipe-form'),
+              warningMsg = document.querySelector('.warning-message'),
+              recipeName = document.getElementById('name'),
+              recipeDescription = document.getElementById('description'),
+              recipeIngredients = document.getElementById('ingredients'),
+              recipeInstructions = document.getElementById('instructions'),
+              recipeImage = document.getElementById('image');
+              
+        const redBorder = '1px solid red',
+                          greenBorder = '2px solid rgba(57, 126, 56, .5)';
+
+         let errorMsg = '';
+             
+         function validateNewRecipe(e) {
+              if(recipeName.value === '' || recipeDescription.value === '' || recipeIngredients.value === '' || recipeInstructions.value === '') {
+                    e.preventDefault();
+                    
+                    recipeName.style.border = redBorder;
+                    recipeDescription.style.border = redBorder;
+                    recipeIngredients.style.border = redBorder; 
+                    recipeInstructions.style.border = redBorder;
+                     
+                    warningMsg.textContent = '**You gotta fill out all fields';
+                    
+                    // reset after 2 seconds
+                    setTimeout(function(){ 
+                        recipeName.style.border = greenBorder;
+                        recipeDescription.style.border = greenBorder;
+                        recipeIngredients.style.border = greenBorder; 
+                        recipeInstructions.style.border = greenBorder;
+                    }, 2500);
+                    
+                    // reset after 3.5 seconds
+                    setTimeout(function(){ 
+                        warningMsg.textContent = null;
+                    }, 3500);
+                
+                 } else if(recipeImage.files.length <= 0) {
+                    e.preventDefault();
+                    
+                    console.log(recipeImage.files);
+                     console.log('length ' + recipeImage.files.length);
+                    recipeImage.style.borderBottom = redBorder;
+
+                    // reset after 2 seconds
+                    setTimeout(function(){ 
+                       // something
+                    recipeImage.style.borderBottom = 'none';
+                    }, 3500);
+                 } 
+   }
+       recipeForm.addEventListener("submit", validateNewRecipe)       
+    }
+         
+         
         // END VALIDATION
 })();

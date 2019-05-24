@@ -140,6 +140,11 @@ a.btn {
     padding: 0 0 1rem 0;
 }
 
+.warning-message {
+    padding: 1rem 0;
+    color: red;
+}
+
 /** End Global Styles **/
 
  

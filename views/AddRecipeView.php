@@ -8,8 +8,9 @@
                     <h3>Thanks for contributing your recipe! We can't wait to try it.</h3>
                 </div>
                <div class="recipe-form-wrap">
-                    <form class="add-recipe-form" action="SaveRecipe.php" method="POST" enctype="multipart/form-data">
+                    <form class="add-recipe-form" id="add-recipe-form" action="SaveRecipe.php" method="POST" enctype="multipart/form-data">
                          <div class="form-field">
+                             <div class="warning-message"></div>
                              <label for="name">Name</label>
                              <input type="text" name="name" id="name">
                          </div>
