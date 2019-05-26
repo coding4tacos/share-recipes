@@ -46,7 +46,7 @@ class UserDAO {
      public function authenticate($username,$password) {
         $user=null;
       
-        
+        /*
         // PREPARED STATEMENT
         $stmt = $this->con->prepare("SELECT FROM users WHERE username=? AND password=?");
         $stmt->bind_param("ss", $username, $password);
@@ -66,7 +66,7 @@ class UserDAO {
          
         return $user;
         
-        /*
+        */
         
         $sql="select email from users where username='$username' and password='$password'";
         $rs=$this->con->query($sql);
@@ -76,7 +76,7 @@ class UserDAO {
         }
         $rs->free();
         return $user;
-       */
+       
     }
     
 }
