@@ -18,14 +18,19 @@ class UserDAO {
         // WORKING on prepared statements
         // ----
         // prepare and bind
-        //$stmt = $this->con->prepare("INSERT INTO users (email, username, password) VALUES ('{$user->getEmail()}','{$user->getUsername()}','$password')";
-        // $stmt = bind_param("sss", $email, $username, $password);
+         $stmt = $this->con->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
+         $stmt->bind_param("sss", $email, $username, $password);
         
+         $email = $user->getEmail();
+         $username = $user->getUsername();
+         $password = $password;
+         $stmt->execute();
+         
+        $stmt->close();
+        $this->con->close();
         
-        
-        
-        $sql="insert into users (email,username,password) values ('{$user->getEmail()}','{$user->getUsername()}','$password')";
-        $this->con->query($sql);
+      //  $sql="insert into users (email,username,password) values ('{$user->getEmail()}','{$user->getUsername()}','$password')";
+      //  $this->con->query($sql);
         
     }
      public function read($email) {
