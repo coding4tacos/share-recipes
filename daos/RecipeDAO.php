@@ -27,6 +27,10 @@ class RecipeDAO {
         // prepare the prepared statement
         // if(!mysqli_stmt_prepare($stmt, $sql)) {
         //      echo "SQL statement failed";
+        // } else {
+            // bind params to the placeholders
+        // mysqli_stmt_bind_param($stmt, ");
+        
         // }
         
         
