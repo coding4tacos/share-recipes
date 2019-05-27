@@ -13,10 +13,8 @@ class UserDAO {
 
     public function create($user,$password) {
         $password=hash("sha256",self::SALT.$password);
-        
-        
+
         // WORKING on prepared statements
-        // ----
         // prepare and bind
          $stmt = $this->con->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
          $stmt->bind_param("sss", $email, $username, $password);
@@ -43,31 +41,30 @@ class UserDAO {
     }
     
        
-        /* 
+        
      public function authenticate($username,$password) {
         $user=null;
+        $mysqli = $this->con;
   
-        // PREPARED STATEMENT
-        $stmt = $this->con->prepare("SELECT FROM users WHERE username=? AND password=?");
-        $stmt->bind_param("ss", $username, $password);
-
-        $username = $user->getUsername();
+        // prepare stmt
+        $stmt = $mysqli->prepare("SELECT email FROM users WHERE username=? AND password=?");
+        $stmt->bind_param('ss', $user, $password);
+        
+        $user = $username;
         $password = hash("sha256",self::SALT.$password);
         
         $r = $stmt->execute();
-                
-        if($r== true){
+        if($r!==null){
             $user=new User($r["email"],$username);
-        } else {
-            echo 'false!';
         }
-        
-
-         
         return $user;
         
-        */
+        $stmt->close();
+        $mysqli->close();
+     }
         
+        
+        /*
 public function authenticate($username,$password) {
         $user=null;
         $password=hash("sha256",self::SALT.$password);
@@ -80,5 +77,5 @@ public function authenticate($username,$password) {
         $rs->free();
         return $user;
     }
-    
+    */
 }

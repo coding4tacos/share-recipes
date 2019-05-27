@@ -5,13 +5,8 @@
         <group>
             <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/daos/UserDAO.php</file>
             <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/SaveRecipe.php</file>
-            <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/views/EditRecipe.php</file>
-            <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/views/AddRecipeView.php</file>
-            <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/views/ConfirmNewRecipe.php</file>
-            <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/AddRecipe.php</file>
-            <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/views/RecipeOK.php</file>
-            <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/daos/RecipeDAO.php</file>
             <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/models/User.php</file>
+            <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/daos/RecipeDAO.php</file>
             <file>file:/C:/Users/taylo/OneDrive/Documents/NetBeansProjects/Recipes/models/Recipe.php</file>
         </group>
     </open-files>
