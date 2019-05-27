@@ -12,11 +12,12 @@ class UserDAO {
     }
 
     public function create($user,$password) {
+        $mysqli = $this->con;
         $password=hash("sha256",self::SALT.$password);
 
         // WORKING on prepared statements
         // prepare and bind
-         $stmt = $this->con->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
+         $stmt = $mysqli->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
          $stmt->bind_param("sss", $email, $username, $password);
         
          $email = $user->getEmail();
@@ -25,7 +26,7 @@ class UserDAO {
          $stmt->execute();
          
         $stmt->close();
-        $this->con->close();
+        $mysqli->close();
      
     }
      public function read($email) {
