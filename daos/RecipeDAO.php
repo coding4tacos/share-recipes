@@ -18,38 +18,26 @@ class RecipeDAO {
     }
     
     public function create($recipe) {
-        $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}')";
+        $con = $this->con;
         
-            // Create a template
-            // $sql = $mysqli->prepare("INSERT INTO recipes ( name, description, ingredients, instructions, img ) VALUES ( ?, ?, ?, ?, ?)");
-            // Createa prepared statement
-        // $stmt = mysqli_stmt_init($this->con);
-        // prepare the prepared statement
-        // if(!mysqli_stmt_prepare($stmt, $sql)) {
-        //      echo "SQL statement failed";
-        // } else {
-            // bind params to the placeholders
-        // mysqli_stmt_bind_param($stmt, ");
+        // prepare and bind
+        $stmt = $con->prepare("INSERT INTO recipes (name, description, ingredients, instructions, img) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $name, $desc, $ingredients, $instructions, $img);
         
-        // }
+        // set params & execute
+        $name = $recipe->getName();
+        $desc = $recipe->getDescription();
+        $ingredients = $recipe->getIngredients();
+        $instructions = $recipe->getInstructions();
+        $img = $recipe->getImg();
+        $stmt->execute();
         
-        
-       //   $stmt->bind_param("ssssa", '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}');
-        // $stmt->execute();
-        
-        // https://www.youtube.com/watch?v=I4JYwRIjX6c
-         
-        
-        
-        
-        $this->con->query($sql);
-        $sql="select last_insert_id() as id";
+        // $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}')";
+        // $this->con->query($sql);
+        $sql="SELECT last_insert_id() AS id";
         $rs=$this->con->query($sql);
-        
-        
-       // $result = $stmt->get_result();  // instead of line above
-        // $r = $rs->fetch_assoc();
-         $r=$rs->fetch_assoc();
+       
+        $r=$rs->fetch_assoc();
         $recipe->setId($r["id"]);
     }
     

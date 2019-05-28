@@ -12,12 +12,12 @@ class UserDAO {
     }
 
     public function create($user,$password) {
-        $mysqli = $this->con;
+        $con = $this->con;
         $password=hash("sha256",self::SALT.$password);
 
         // WORKING on prepared statements
         // prepare and bind
-         $stmt = $mysqli->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
+         $stmt = $con->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
          $stmt->bind_param("sss", $email, $username, $password);
         
          $email = $user->getEmail();
@@ -26,9 +26,10 @@ class UserDAO {
          $stmt->execute();
          
         $stmt->close();
-        $mysqli->close();
-     
+        $con->close();
     }
+    
+    
      public function read($email) {
         $user=null;
         $sql="select * from users where email='$email'";
@@ -45,10 +46,10 @@ class UserDAO {
         
      public function authenticate($username,$password) {
         $user=null;
-        $mysqli = $this->con;
+        $con = $this->con;
   
         // prepare stmt
-        $stmt = $mysqli->prepare("SELECT email FROM users WHERE username=? AND password=?");
+        $stmt = $con->prepare("SELECT email FROM users WHERE username=? AND password=?");
         $stmt->bind_param('ss', $user, $password);
         
         $user = $username;
@@ -61,7 +62,7 @@ class UserDAO {
         return $user;
         
         $stmt->close();
-        $mysqli->close();
+        $con->close();
      }
         
         
