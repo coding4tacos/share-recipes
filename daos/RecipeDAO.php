@@ -42,6 +42,24 @@ class RecipeDAO {
     }
     
     public function read($id){
+        $recipe = null;
+        
+        $con = $this->con;
+        
+        // prepare and bind
+        $stmt = $con->prepare("SELECT * FROM recipes WHERE id=?");
+        $stmt->bind_param("i", $id);
+        // set parameters
+        $id = $id;
+        $r = $stmt->execute();
+        if($r!==null){
+            $recipe=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"], $r["instructions"], $r["img"]);
+        }
+        $rs->free();
+        return $recipe;
+        
+        
+        /*
         $recipe=null;
         $sql="select * from recipes where id=$id";
         $rs=$this->con->query($sql);
@@ -51,6 +69,8 @@ class RecipeDAO {
         }
         $rs->free();
         return $recipe;
+         * 
+         */
     }
     
     public function readeFeatured(){
