@@ -7,7 +7,7 @@ class indexController{
     public function execute(){
         
         $dao=new RecipeDAO();
-        $recipes=$dao->readeFeatured();
+        $recipes=$dao->readFeatured();
         
         $view=new View();
         $view->add("recipes",$recipes);

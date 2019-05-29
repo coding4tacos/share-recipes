@@ -1,21 +1,17 @@
 <?php
 
 class UserDAO {
-    
     private const SALT="asdoiub484kjfdbpitrw43nrtier98dGVFP94,9";
-    
     private $con;
-    
     
     function __construct() {
         $this->con = DB::getDbCon();
     }
-
+    
     public function create($user,$password) {
         $con = $this->con;
         $password=hash("sha256",self::SALT.$password);
 
-        // WORKING on prepared statements
         // prepare and bind
          $stmt = $con->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
          $stmt->bind_param("sss", $email, $username, $password);
@@ -29,8 +25,21 @@ class UserDAO {
         $con->close();
     }
     
-    
      public function read($email) {
+        $con = $this->con;
+        $user=null;
+        // prepare stmt
+        $stmt = $con->prepare("SELECT * FROM users WHERE email=?");
+        $stmt->bind_param("s", $email);
+        
+        $email = $email;
+        $r = $stmt->execute();
+         if($r!==null){
+            $user=new User($r["email"],$r["username"]);
+        }
+        return $user;
+         
+         /*
         $user=null;
         $sql="select * from users where email='$email'";
         $rs=$this->con->query($sql);
@@ -40,6 +49,8 @@ class UserDAO {
         }
         $rs->free();
         return $user;
+          * 
+          */
     }
     
        

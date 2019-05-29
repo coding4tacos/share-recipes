@@ -73,7 +73,7 @@ class RecipeDAO {
          */
     }
     
-    public function readeFeatured(){
+    public function readFeatured(){
         $recipe=null;
         $sql="select * from recipes order by time_inserted desc limit 0,3";
         $rs=$this->con->query($sql);

@@ -5,7 +5,6 @@
         session_start(); 
     } 
 
-
 global $data;
 
 ?><!DOCTYPE html>
