@@ -74,9 +74,11 @@ class RecipeDAO {
     }
     
     public function readFeatured(){
+        $con = $this->con; 
+     
         $recipe=null;
         $sql="select * from recipes order by time_inserted desc limit 0,3";
-        $rs=$this->con->query($sql);
+        $rs=$con->query($sql);
         $recipes=[];
         while($r=$rs->fetch_assoc()){
             $recipes[]=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
@@ -87,10 +89,26 @@ class RecipeDAO {
     }
     
     public function update($recipe){
+        $con = $this->con;
+        
+        // prepare and bind  // THIS MIGHT NOT BE RIGHT
+        $stmt = $con->prepare("UPDATE recipes SET VALUES (?, ?, ?, ?, ?) where id=?");
+        $stmt->bind_param("ssssssi", $name, $desc, $ingredients, $instructions, $img, $id);
+
+        // set params & execute
+        $name = $recipe->getName();
+        $desc = $recipe->getDescription();
+        $ingredients = $recipe->getIngredients();
+        $instructions = $recipe->getInstructions();
+        $img = $recipe->getImg();
+        $id = $recipe->getId();
+        $stmt->execute();
+                
+
+        /*
         $sql="update recipes set name='{$recipe->getName()}',description='{$recipe->getDescription()}',ingredients='{$recipe->getIngredients()}', instructions='{$recipe->getInstructions()}', img='{$recipe->getImg()}' where id={$recipe->getId()}";
         $this->con->query($sql);
-           
-    }
-    
-    
+         * 
+         */
+        }  
 }

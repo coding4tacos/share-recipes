@@ -53,8 +53,7 @@ class UserDAO {
           */
     }
     
-       
-        
+
      public function authenticate($username,$password) {
         $user=null;
         $con = $this->con;
