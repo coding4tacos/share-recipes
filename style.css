@@ -23,7 +23,6 @@ body {
      color: #333;
      position: relative;
      min-height: 100vh;
-     height: 100%;
      padding-bottom: 3rem;
  }
  
@@ -252,6 +251,27 @@ nav ul li:hover::after{
 .featured-recipes .featured-recipe p {
     padding: 0 .5rem;
 }
+
+
+/* Single Recipe */
+.single-recipe {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.single-recipe .recipe-image,
+.single-recipe .recipe-info {
+    flex: 0 1 45%;
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+
 
 .add-recipe {
     padding: 2rem 0;
