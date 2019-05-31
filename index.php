@@ -2,6 +2,7 @@
 
 ini_set("display_errors",true);
 include_once("config/Config.php");
+
 class indexController{
     
     public function execute(){

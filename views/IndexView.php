@@ -25,7 +25,7 @@
                         <h4 class="text-center"><?php echo $recipe->getName(); ?></h4>
                     </div>
                     <p class="recipe-description"><?php echo $recipe->getDescription(); ?></p>
-                    <p><a class="btn" href="ViewRecipe.php">see more</a></p>
+                    <p><a class="btn" href="ViewRecipe.php?id=<?php echo $recipe->getId(); ?>">see more</a></p>
                 </div>
                 <?php } ?>
             </div><!-- End Featured Recipes -->
