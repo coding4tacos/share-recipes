@@ -8,7 +8,6 @@ class LoginController{
         $view=new View();
         $view->render("LoginView.php");
     }
-    
 }
 
 $c=new LoginController(); 

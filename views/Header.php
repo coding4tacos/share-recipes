@@ -17,6 +17,7 @@ global $data;
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto|Dancing+Script" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./chef.png">
 </head>
 
 <body>

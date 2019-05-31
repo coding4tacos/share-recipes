@@ -1,3 +1,4 @@
+
 <?php include 'Header.php'; ?>
 
 <section class="recipe-search">
@@ -35,5 +36,3 @@
     </main>
 
 <?php include 'Footer.php'; ?>
-
-

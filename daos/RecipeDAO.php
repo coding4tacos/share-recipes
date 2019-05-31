@@ -42,6 +42,7 @@ class RecipeDAO {
     }
     
     public function read($id){
+      /* // Could be incorrect
         $recipe = null;
         
         $con = $this->con;
@@ -57,9 +58,8 @@ class RecipeDAO {
         }
         $rs->free();
         return $recipe;
-        
-        
-        /*
+        */
+    
         $recipe=null;
         $sql="select * from recipes where id=$id";
         $rs=$this->con->query($sql);
@@ -69,8 +69,7 @@ class RecipeDAO {
         }
         $rs->free();
         return $recipe;
-         * 
-         */
+
     }
     
     public function readFeatured(){

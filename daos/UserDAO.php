@@ -54,7 +54,8 @@ class UserDAO {
     }
     
 
-     public function authenticate($username,$password) {
+    public function authenticate($username,$password) {
+        /*
         $user=null;
         $con = $this->con;
   
@@ -65,29 +66,30 @@ class UserDAO {
         $user = $username;
         $password = hash("sha256",self::SALT.$password);
         
-        $r = $stmt->execute();
+        echo 'user ' . $user;
+        echo 'pass ' . $password;
+        $rs = $stmt->execute();
+        echo 'rs : ' . $rs; 
         if($r!==null){
             $user=new User($r["email"],$username);
         }
         return $user;
         
-        $stmt->close();
-        $con->close();
+       
      }
+        */
         
-        
-        /*
-public function authenticate($username,$password) {
+       
         $user=null;
         $password=hash("sha256",self::SALT.$password);
         $sql="select email from users where username='$username' and password='$password'";
         $rs=$this->con->query($sql);
         $r=$rs->fetch_assoc();
+
         if($r!==null){
             $user=new User($r["email"],$username);
         }
         $rs->free();
         return $user;
-    }
-    */
+    }    
 }
