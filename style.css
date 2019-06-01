@@ -85,14 +85,8 @@ textarea:focus {
     outline: none;
 }
 
-
-section,
-main {
-     padding: 1rem 0;
-}
  
 .section-header {
-     padding-bottom: 1rem;
      text-align: center;
 }
 
@@ -259,17 +253,30 @@ nav ul li:hover::after{
     justify-content: space-around;
 }
 
+@media only screen and (max-width: 768px) {
+    .single-recipe {
+        flex-direction: column;
+    }
+}
+
 .single-recipe .recipe-image,
 .single-recipe .recipe-info {
     flex: 0 1 45%;
     padding: 1rem;
 }
-
-
-
-
-
-
+@media only screen and (max-width: 768px) {
+    .single-recipe .recipe-info {
+        order: 1;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .single-recipe .recipe-image {
+        order: 2;
+    width: 65%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+}
 
 
 
