@@ -1,31 +1,32 @@
+<?php
+if($data["recipes"]) {
+    $recipe = $data["recipes"];
+};
+?>
 <?php include 'Header.php'; ?>
 
-<section class="recipe-search">
-        <div class="container">
-            <!-- Add Search form -->
-            <form class="text-center">
-                <input type="search" placeholder="Ex: lasagna" class="search-input">
-                <input type="submit" value="Search" class="btn">
-            </form>
-        </div>
-    </section>
     <main>
         <div class="container">
             <div class="section-header">
-                <h2 class="text-center"><?php echo $data["recipes"]->getName(); ?></h2>
-                <p class="recipe-description text-center"><?php echo $data["recipes"]->getDescription(); ?></p>
+                <h2 class="text-center"><?php echo $recipe->getName(); ?></h2>
+                <p class="recipe-description text-center"><?php echo $recipe->getDescription(); ?></p>
             </div>
             <div class="flex single-recipe">
                 <div class="recipe-image"> 
-                    <img class="featured-recipe-img" src="./img/<?php echo $data["recipes"]->getImg(); ?>" alt="<?php echo $data["recipes"]->getName(); ?>">
+                    <img class="featured-recipe-img" src="./img/<?php echo $recipe->getImg(); ?>" alt="<?php echo $recipe->getName(); ?>">
                 </div>
                 <div class="recipe-info">
                     <h3>Ingredients:</h3>
-                    <p class=""><?php echo $data["recipes"]->getIngredients(); ?></p>
+                    <p class=""><?php echo $recipe->getIngredients(); ?></p>
                     <h3>Instructions:</h3>
-                    <p class=""><?php echo $data["recipes"]->getInstructions(); ?></p>
+                    <p class="pad-bottom"><?php echo $recipe->getInstructions(); ?></p>
+                    <?php if(isset($_SESSION['user'])){ ?>
+                        <p><a class="btn" href="EditRecipe.php?id=<?php echo $recipe->getId(); ?>">edit recipe</a></p>
+                    <?php } ?>
                 </div>
-                </div>
+                
+            </div>
+          
             <div class="add-recipe text-center">
                 <a href="Login.php">login</a> or <a href="Register.php">register</a> to add a new recipe
             </div>

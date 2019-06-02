@@ -85,6 +85,10 @@ textarea:focus {
     outline: none;
 }
 
+section,
+main {
+    padding: 1rem 0;
+}
  
 .section-header {
      text-align: center;
@@ -93,7 +97,6 @@ textarea:focus {
 .section-header h4 {
      padding-top: 2rem;
 }
-
 
 .text-center {
     text-align: center;
@@ -131,6 +134,10 @@ a.btn {
 
 .pad-bottom {
     padding: 0 0 1rem 0;
+}
+
+.pad-top {
+   padding-top: 1rem; 
 }
 
 .warning-message {

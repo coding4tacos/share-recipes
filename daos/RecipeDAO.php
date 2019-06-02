@@ -88,6 +88,7 @@ class RecipeDAO {
     }
     
     public function update($recipe){
+        /*
         $con = $this->con;
         
         // prepare and bind  // THIS MIGHT NOT BE RIGHT
@@ -103,11 +104,11 @@ class RecipeDAO {
         $id = $recipe->getId();
         $stmt->execute();
                 
-
-        /*
+*/
+        
         $sql="update recipes set name='{$recipe->getName()}',description='{$recipe->getDescription()}',ingredients='{$recipe->getIngredients()}', instructions='{$recipe->getInstructions()}', img='{$recipe->getImg()}' where id={$recipe->getId()}";
         $this->con->query($sql);
-         * 
-         */
+         
+         
         }  
 }

@@ -3,16 +3,13 @@
 ini_set("display_errors",true);
 include_once("config/Config.php");
 
-
-if(isset($_GET['id'])) {
-    echo 'yeeeess!';
+if(isset($_GET['id'])) {  
    $id = $_GET['id'];
+} else {
+    echo 'no get id';
 }
 
-
-
-class ViewRecipe {
-    
+class EditRecipe {
     public function execute(){
         $dao=new RecipeDAO();
         // i imagine the following line isn't the best way 
@@ -20,11 +17,10 @@ class ViewRecipe {
         
         $view=new View();
         $view->add("recipes",$recipes);
-        $view->render("RecipeView.php");
+        $view->render("EditRecipeView.php");
     }
-    
 }
 
-$c=new ViewRecipe();
+$c=new EditRecipe();
 $c->execute();
 
