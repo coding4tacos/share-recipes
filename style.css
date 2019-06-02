@@ -121,6 +121,13 @@ a.btn {
     cursor: pointer;
 }
 
+.btn-danger {
+    background-color: rgba(236, 9, 9, .8);
+}
+.btn-danger:hover {
+    background-color: rgba(236, 9, 9, 1);
+}
+
 .btn-large {
     font-size: 1.3rem;
     padding: .4rem 2rem;
@@ -285,8 +292,6 @@ nav ul li:hover::after{
 }
 }
 
-
-
 .add-recipe {
     padding: 2rem 0;
 }
@@ -392,6 +397,12 @@ form.login-form .form-field input[type="password"] {
     padding-left: 0;
 }
 
+.edit-recipe-image {
+    max-width: 40%;
+}
+
+
+/* Footer */
 footer {
     background-color: rgb(57, 126, 56);
     color: #fff;

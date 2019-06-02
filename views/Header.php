@@ -28,7 +28,7 @@ global $data;
         <div class="container">
             <ul class="flex nav-links">
                 <li><a href="./" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Categories</a></li>
+                <li><a href="#" class="nav-link">All Recipes</a></li>
                 <?php if(isset($_SESSION['user'])) : ?>
                     <li><a href="./AddRecipe.php" class="nav-link">Add Recipe</a></li>
                     <li><a href="#" class="nav-link">My Account</a></li>

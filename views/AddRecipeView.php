@@ -33,6 +33,7 @@
                        </div>
                        <div class="form-field">
                            <input type="submit" value="Submit" class="btn btn-large">
+                           <a href="./" class="btn btn-large btn-danger">Cancel</a>
                        </div>
                     </form>
                </div>

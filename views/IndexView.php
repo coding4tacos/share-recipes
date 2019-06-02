@@ -14,7 +14,7 @@
     <main>
         <div class="container">
             <div class="section-header">
-                <h2>Featured Recipes</h2>
+                <h2 class="pad-bottom">Featured Recipes</h2>
             </div>
             <div class="flex featured-recipes">
                 <?php foreach($data["recipes"] as $i => $recipe){ ?>
