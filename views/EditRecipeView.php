@@ -16,7 +16,8 @@
                     <h3 class="pad-bottom">Edit Recipe</h3>
                 </div>
                <div class="recipe-form-wrap">
-                    <form class="add-recipe-form" id="add-recipe-form" action="SaveRecipe.php" method="POST" enctype="multipart/form-data">
+                    <form class="add-recipe-form" id="add-recipe-form" action="SaveEdit.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?php echo $recipe->getId(); ?>" />
                          <div class="form-field">
                              <div class="warning-message"></div>
                              <label for="name">Name</label>

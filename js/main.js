@@ -128,8 +128,8 @@ const registerPage = document.querySelector('main.register'),
                         warningMsg.textContent = null;
                     }, 3500);
                 
-                 } /* 
-     *                // check for image
+                 } 
+                     // check for image
                   else if(recipeImage.files.length <= 0) {
                     e.preventDefault();
                     
@@ -146,7 +146,7 @@ const registerPage = document.querySelector('main.register'),
                     warningMsg.textContent = null;
                     }, 3500);
                  } 
- * */
+ 
                   
    }
        recipeForm.addEventListener("submit", validateNewRecipe);

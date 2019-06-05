@@ -30,8 +30,10 @@ class RecipeDAO {
         $ingredients = $recipe->getIngredients();
         $instructions = $recipe->getInstructions();
         $img = $recipe->getImg();
-        $stmt->execute();
         
+        
+        $stmt->execute();
+  
         // $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}')";
         // $this->con->query($sql);
         $sql="SELECT last_insert_id() AS id";
@@ -42,7 +44,7 @@ class RecipeDAO {
     }
     
     public function read($id){
-      /* // Could be incorrect
+       // Could be incorrect
         $recipe = null;
         
         $con = $this->con;
@@ -51,17 +53,19 @@ class RecipeDAO {
         $stmt = $con->prepare("SELECT * FROM recipes WHERE id=?");
         $stmt->bind_param("i", $id);
         // set parameters
-        $id = $id;
-        $r = $stmt->execute();
-        if($r!==null){
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        if($r=$rs->fetch_assoc()){
             $recipe=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"], $r["instructions"], $r["img"]);
         }
         $rs->free();
         return $recipe;
-        */
+        
     
+        /*
         $recipe=null;
-        $sql="select * from recipes where id=$id";
+        $sql="select * from recipes where id=?";
+        
         $rs=$this->con->query($sql);
         $r=$rs->fetch_assoc();
         if($r!==null){
@@ -69,7 +73,7 @@ class RecipeDAO {
         }
         $rs->free();
         return $recipe;
-
+        */
     }
     
     public function readFeatured(){
@@ -88,12 +92,12 @@ class RecipeDAO {
     }
     
     public function update($recipe){
-        /*
+        
         $con = $this->con;
         
         // prepare and bind  // THIS MIGHT NOT BE RIGHT
-        $stmt = $con->prepare("UPDATE recipes SET VALUES (?, ?, ?, ?, ?) where id=?");
-        $stmt->bind_param("ssssssi", $name, $desc, $ingredients, $instructions, $img, $id);
+        $stmt = $con->prepare("UPDATE recipes SET name=?, description=?, ingredients=?, instructions=?, img=? where id=?");
+        $stmt->bind_param("sssssi", $name, $desc, $ingredients, $instructions, $img, $id);
 
         // set params & execute
         $name = $recipe->getName();
@@ -102,13 +106,15 @@ class RecipeDAO {
         $instructions = $recipe->getInstructions();
         $img = $recipe->getImg();
         $id = $recipe->getId();
+        
         $stmt->execute();
                 
-*/
+/*
         
         $sql="update recipes set name='{$recipe->getName()}',description='{$recipe->getDescription()}',ingredients='{$recipe->getIngredients()}', instructions='{$recipe->getInstructions()}', img='{$recipe->getImg()}' where id={$recipe->getId()}";
+        echo $sql;
         $this->con->query($sql);
+         */
          
-         
-        }  
+    }  
 }
