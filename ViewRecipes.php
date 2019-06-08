@@ -1,20 +1,18 @@
 <?php
-
 ini_set("display_errors",true);
 include_once("config/Config.php");
 
 class indexController {  
     public function execute(){
         $dao=new RecipeDAO();
-        $recipes=$dao->readFeatured();
+        $recipes=$dao->readAll();
         
         $view=new View();
         $view->add("recipes",$recipes);
-        $view->render("IndexView.php");
+        $view->render("AllRecipesView.php");
     } 
 }
 
 $c=new indexController();
 $c->execute();
-
-
+?>

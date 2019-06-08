@@ -3,9 +3,7 @@
     { 
         session_start(); 
     } 
-
 global $data;
-
 ?><!DOCTYPE html>
 <html>
 
@@ -17,6 +15,10 @@ global $data;
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto|Dancing+Script" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="./chef.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -28,7 +30,7 @@ global $data;
         <div class="container">
             <ul class="flex nav-links">
                 <li><a href="./" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">All Recipes</a></li>
+                <li><a href="ViewRecipes.php" class="nav-link">All Recipes</a></li>
                 <?php if(isset($_SESSION['user'])) : ?>
                     <li><a href="./AddRecipe.php" class="nav-link">Add Recipe</a></li>
                     <li><a href="#" class="nav-link">My Account</a></li>

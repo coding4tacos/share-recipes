@@ -305,7 +305,6 @@ main.login {
     padding-top: 2rem;
 }
 
-
 .login-form-wrap,
 .register-form-wrap {
     background-color: #fff;
@@ -366,14 +365,12 @@ form.login-form .form-field input[type="password"] {
     padding: .3rem;
 }
 
-
 .error-message {
     color: red;
     padding: .5rem 0;
     text-align: center;
     font-size: .8rem;
 }
-
 
 
 /* Add Recipe */
@@ -399,6 +396,27 @@ form.login-form .form-field input[type="password"] {
 
 .edit-recipe-image {
     max-width: 40%;
+}
+
+
+/* All Recipes Page */
+#all-recipes-pg .flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#all-recipes-pg .recipe-card {
+    width: 40%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+}
+
+.recipe-card img {
+    max-width: 30%;
+    max-height: 250px;
 }
 
 

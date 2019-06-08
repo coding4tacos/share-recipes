@@ -44,15 +44,13 @@ class RecipeDAO {
     }
     
     public function read($id){
-       // Could be incorrect
-        $recipe = null;
-        
         $con = $this->con;
+        $recipe = null;
         
         // prepare and bind
         $stmt = $con->prepare("SELECT * FROM recipes WHERE id=?");
         $stmt->bind_param("i", $id);
-        // set parameters
+        
         $stmt->execute();
         $rs=$stmt->get_result();
         if($r=$rs->fetch_assoc()){
@@ -60,26 +58,27 @@ class RecipeDAO {
         }
         $rs->free();
         return $recipe;
-        
+    }
     
-        /*
+    public function readAll(){
+        $con = $this->con; 
         $recipe=null;
-        $sql="select * from recipes where id=?";
         
-        $rs=$this->con->query($sql);
-        $r=$rs->fetch_assoc();
-        if($r!==null){
-            $recipe=new Recipe($id,$r["name"],$r["description"],$r["ingredients"],$r["userId"], $r["instructions"], $r["img"]);
+        $sql="select * from recipes order by time_inserted desc";
+        
+        $rs=$con->query($sql);
+        $recipes=[];
+        while($r=$rs->fetch_assoc()){
+            $recipes[]=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
         }
         $rs->free();
-        return $recipe;
-        */
+        return $recipes;
     }
     
     public function readFeatured(){
         $con = $this->con; 
-     
         $recipe=null;
+        
         $sql="select * from recipes order by time_inserted desc limit 0,3";
         $rs=$con->query($sql);
         $recipes=[];

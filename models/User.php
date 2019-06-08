@@ -5,12 +5,10 @@ class User {
     private $email;
     private $username;
     private $userId;
-    
-    
+   
     function __construct($email, $username) {
         $this->email = $email;
         $this->username = $username;
-        $this->userId = $userId;
     }
     
     function getEmail() {
