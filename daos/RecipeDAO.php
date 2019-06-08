@@ -56,7 +56,7 @@ class RecipeDAO {
         $stmt->execute();
         $rs=$stmt->get_result();
         if($r=$rs->fetch_assoc()){
-            $recipe=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"], $r["instructions"], $r["img"]);
+            $recipe=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
         }
         $rs->free();
         return $recipe;
