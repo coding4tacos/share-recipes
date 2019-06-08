@@ -15,17 +15,17 @@ class Recipe {
     private $name;
     private $description;
     private $ingredients;
-    private $userEmail;
+    private $userId;
     private $instructions;
     private $img;
     
     
-    public function __construct($id,$name,$description,$ingredients,$userEmail,$instructions, $img=""){
+    public function __construct($id,$name,$description,$ingredients,$userId,$instructions, $img=""){
         $this->id=$id;
         $this->name=$name;
         $this->description=$description;
         $this->ingredients=$ingredients;
-        $this->userEmail=$userEmail;
+        $this->userId=$userId;
         $this->instructions=$instructions;
         $this->img=$img;
     }
@@ -42,7 +42,9 @@ class Recipe {
     function getIngredients() {
         return $this->ingredients;
     }
-
+    function getUserId() {
+        return $this->userId;
+    }
     function userEmail() {
         return $this->userEmail;
     }

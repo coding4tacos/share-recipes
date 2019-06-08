@@ -4,11 +4,13 @@ class User {
     
     private $email;
     private $username;
+    private $userId;
     
     
     function __construct($email, $username) {
         $this->email = $email;
         $this->username = $username;
+        $this->userId = $userId;
     }
     
     function getEmail() {
@@ -26,4 +28,8 @@ class User {
     function setUsername($username) {
         $this->username = $username;
     }    
+    
+    function getUserId() {
+        return $this->userId;
+    }
 }

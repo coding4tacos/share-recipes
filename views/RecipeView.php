@@ -4,7 +4,6 @@ if($data["recipes"]) {
 };
 ?>
 <?php include 'Header.php'; ?>
-
     <main>
         <div class="container">
             <div class="section-header">
@@ -20,11 +19,12 @@ if($data["recipes"]) {
                     <p class=""><?php echo $recipe->getIngredients(); ?></p>
                     <h3>Instructions:</h3>
                     <p class="pad-bottom"><?php echo $recipe->getInstructions(); ?></p>
-                    <?php if(isset($_SESSION['user'])){ ?>
-                        <p><a class="btn" href="EditRecipe.php?id=<?php echo $recipe->getId(); ?>">edit recipe</a></p>
-                    <?php } ?>
+                    <?php if(isset($_SESSION['user'])){
+                        if($_SESSION['user']->getUserId() == $recipe->getUserId()) {
+                             ?>
+                            <p><a class="btn" href="EditRecipe.php?id=<?php echo $recipe->getId(); ?>">edit recipe</a></p>
+                    <?php }} ?>
                 </div>
-                
             </div>
           
             <div class="add-recipe text-center">
