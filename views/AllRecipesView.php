@@ -8,7 +8,9 @@
             <?php foreach($data["recipes"] as $i => $recipe){ ?>
                 <!-- Recipe -->
                 <div class="flex recipe-card">
-                    <img class="featured-recipe-img" src="./img/<?php echo $recipe->getImg(); ?>" alt="<?php echo $recipe->getName(); ?>">
+                    <div class="img-wrap">
+                        <img class="" src="./img/<?php echo $recipe->getImg(); ?>" alt="<?php echo $recipe->getName(); ?>">
+                    </div>
                     <div class="recipe-information">
                         <h3 class="text-center"><?php echo $recipe->getName(); ?></h3>
                         <p class="recipe-description"><?php echo $recipe->getDescription(); ?></p>

@@ -13,7 +13,7 @@
                          <div class="form-field">
                               <input type="submit" value="Submit" class="btn" />
                          </div>
-                         <p class="message">Haven't registered? <a href="Register.php">Create an
+                         <p class="message text-center">Haven't registered? <a href="Register.php">Create an
                                    account</a></p>
                     </form>
                </div>

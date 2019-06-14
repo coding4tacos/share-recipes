@@ -20,7 +20,7 @@
                         <div class="text-center">
                              <input type="submit" value="Sign Up" class="btn" />
                         </div>
-                        <p class="message">Already registered? <a href="login.php">Login</a></p>
+                        <p class="message text-center">Already registered? <a href="login.php">Login</a></p>
                     </form>
                </div>
           </div>
