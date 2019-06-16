@@ -407,9 +407,23 @@ form.login-form .form-field input[type="password"] {
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 2rem;
-    border: 1px solid #ccc;
+    box-shadow: 1px 1px 3px #ccc;
     text-align: center;
+} 
+@media only screen and (max-width: 850px){
+    #all-recipes-pg .flex {
+        justify-content: space-evenly;
+    }
+    #all-recipes-pg .recipe-card {
+        width: 40%;
+    } 
 }
+@media only screen and (max-width: 550px){
+    #all-recipes-pg .recipe-card {
+        width: 80%;
+    } 
+}
+
 .recipe-card .img-wrap {
     width: 100%;
 }
@@ -423,6 +437,11 @@ form.login-form .form-field input[type="password"] {
 .recipe-card .recipe-information {
     width: 100%;
 }
+
+#all-recipes-pg .recipe-card .recipe-information h3 {
+    color: rgba(45, 99, 44, 1);
+}
+
 
 /* Footer */
 footer {
