@@ -98,6 +98,10 @@ main {
     text-align: center;
 }
 
+.text-green {
+    color: rgb(45, 99, 44);
+}
+
 .btn {
     color: #fff;
     padding: .4rem 1rem;
@@ -256,8 +260,27 @@ nav ul li:hover::after{
     padding: 0 .5rem;
 }
 
+section.random-featured-recipe {
+    padding: 3rem 0;
+}
 
-/* Single Recipe */
+.random-featured-recipe .random-recipe {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.random-recipe .recipe-information {
+    flex: 0 1 35%;
+}
+
+.random-recipe .img-wrap {
+    flex: 0 1 55%;
+}
+
+/* single recipe */
+#single-recipe-pg h2, h3 {
+    color: rgba(45, 99, 44, 1);
+}
 .single-recipe {
     flex-direction: row;
     justify-content: space-around;

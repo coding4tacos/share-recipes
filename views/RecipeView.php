@@ -4,7 +4,7 @@ if($data["recipes"]) {
 };
 ?>
 <?php include 'Header.php'; ?>
-    <main>
+    <main id="single-recipe-pg">
         <div class="container">
             <div class="section-header">
                 <h2 class="text-center"><?php echo $recipe->getName(); ?></h2>
@@ -17,7 +17,7 @@ if($data["recipes"]) {
                 <div class="recipe-info">
                     <i class="fas fa-star"></i>
                     <h3>Ingredients:</h3>
-                    <p class=""><?php echo $recipe->getIngredients(); ?></p>
+                    <p><?php echo $recipe->getIngredients(); ?></p>
                     <h3>Instructions:</h3>
                     <p class="pad-bottom"><?php echo $recipe->getInstructions(); ?></p>
                     <?php if(isset($_SESSION['user'])){

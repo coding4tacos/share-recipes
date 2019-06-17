@@ -7,9 +7,13 @@ class indexController {
     public function execute(){
         $dao=new RecipeDAO();
         $recipes=$dao->readFeatured();
+        $allRecipes=$dao->readAll();
         
+        // var_dump($allRecipes);
+
         $view=new View();
         $view->add("recipes",$recipes);
+        $view->add("allRecipes", $allRecipes);
         $view->render("IndexView.php");
     } 
 }

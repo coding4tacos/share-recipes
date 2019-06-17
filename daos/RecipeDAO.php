@@ -33,9 +33,7 @@ class RecipeDAO {
         
         
         $stmt->execute();
-  
-        // $sql="insert into recipes ( name, description, ingredients, instructions, img) values ( '{$recipe->getName()}', '{$recipe->getDescription()}', '{$recipe->getIngredients()}', '{$recipe->getInstructions()}', '{$recipe->getImg()}')";
-        // $this->con->query($sql);
+    
         $sql="SELECT last_insert_id() AS id";
         $rs=$this->con->query($sql);
        
