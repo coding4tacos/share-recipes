@@ -226,6 +226,11 @@ nav ul li:hover::after{
     flex-wrap: wrap;
     justify-content: space-between;
 }
+@media only screen and (max-width: 465px) {
+    .featured-recipes {
+        justify-content: center;
+    }
+}
 
 .featured-recipes .featured-recipe {
    /*  border: 1px solid rgb(57, 126, 56);  */
@@ -267,6 +272,11 @@ section.random-featured-recipe {
 .random-featured-recipe .random-recipe {
     flex-direction: row;
     justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+    .random-featured-recipe .random-recipe {
+        flex-direction: column;
+    }
 }
 
 .random-recipe .recipe-information {
