@@ -6,17 +6,6 @@ $randomRecipe = $allRecipes[$randomNumber];
 
 include 'Header.php'; ?>
 
-<!-- 
-<section class="recipe-search">
-    <div class="container">
-        <h3 class="text-center">Make something delicious tonight!</h3>
-        <form class="text-center">
-            <input type="search" placeholder="Ex: lasagna" class="search-input">
-            <input type="submit" value="Search" class="btn">
-        </form>
-    </div>
-</section>
--->
 <main>
     <div class="container">
         <div class="section-header">
@@ -45,7 +34,6 @@ include 'Header.php'; ?>
                 <!-- Recipe -->
                 <div class="flex random-recipe">
                     <div class="recipe-information">
-                        <i class="fas fa-star"></i>
                     <h3>Ingredients:</h3>
                     <p><?php echo $recipe->getIngredients(); ?></p>
                     <h3>Instructions:</h3>
