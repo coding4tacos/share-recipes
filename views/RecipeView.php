@@ -15,7 +15,6 @@ if($data["recipes"]) {
                     <img class="featured-recipe-img" src="./img/<?php echo $recipe->getImg(); ?>" alt="<?php echo $recipe->getName(); ?>">
                 </div>
                 <div class="recipe-info">
-                    <i class="fas fa-star"></i>
                     <h3>Ingredients:</h3>
                     <p><?php echo $recipe->getIngredients(); ?></p>
                     <h3>Instructions:</h3>
