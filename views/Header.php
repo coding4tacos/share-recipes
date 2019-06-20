@@ -28,7 +28,11 @@ global $data;
     </header>
     <nav>
         <div class="container">
-            <ul class="flex nav-links">
+            <div id="nav-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="flex nav-links" id="nav-links">
                 <li><a href="./" class="nav-link">Home</a></li>
                 <li><a href="ViewRecipes.php" class="nav-link">All Recipes</a></li>
                 <?php if(isset($_SESSION['user'])) : ?>

@@ -22,6 +22,7 @@ include 'Header.php'; ?>
         <div class="section-header">
             <h3 class="pad-bottom">Make something delicious tonight!</h3>
             <h2 class="pad-bottom">Recently Added</h2>
+            <a href="https://rapidapi.com/spoonacular/api/recipe-food-nutrition/pricing"> API </a>
         </div>
         <div class="flex featured-recipes">
             <?php foreach($data["recipes"] as $i => $recipe){ ?>

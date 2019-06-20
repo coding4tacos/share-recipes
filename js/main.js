@@ -1,3 +1,28 @@
+// MOBILE NAVBAR
+// variables
+const toggleBtn = document.getElementById('nav-toggle'),
+      navOpenBtn = document.querySelector('.fa-bars'),
+      navCloseBtn = document.querySelector('.fa-times'),
+      navLinks = document.getElementById('nav-links');
+      
+function toggleMobileNav() {
+    if(navOpenBtn.style.display !== 'none'){
+        navLinks.style.display = 'flex';
+        navOpenBtn.style.display = 'none';
+        navCloseBtn.style.display = 'inline-block';
+    } else {
+        navLinks.style.display = 'none';
+        navOpenBtn.style.display = 'inline-block';
+        navCloseBtn.style.display = 'none';
+    }
+}
+      
+navOpenBtn.addEventListener('click', toggleMobileNav);
+navCloseBtn.addEventListener('click', toggleMobileNav);
+
+
+
+// FORM VALIDATION
 // variables
 const registerPage = document.querySelector('main.register'),
       loginPage = document.querySelector('main.login'),
