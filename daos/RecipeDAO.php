@@ -30,7 +30,7 @@ class RecipeDAO {
         $ingredients = $recipe->getIngredients();
         $instructions = $recipe->getInstructions();
         $img = $recipe->getImg();
-        
+        echo $img;
         
         $stmt->execute();
     

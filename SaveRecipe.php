@@ -16,15 +16,14 @@ class AddRecipeController{
         $extension=pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION);
          
         $recipe=new Recipe(-1,$_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->getEmail(), $_POST["instructions"]);
-       // $dao->create($recipe);
+        $dao->create($recipe);
         
         $recipe->setImg($recipe->getId().".".$extension);
-        $dao->create($recipe);
+        $dao->update($recipe);
         move_uploaded_file($_FILES["image"]["tmp_name"],"img/".$recipe->getImg());
         
         $view->render("ConfirmNewRecipe.php");
     }
-    
 }
 $c=new AddRecipeController(); 
 $c->execute();
