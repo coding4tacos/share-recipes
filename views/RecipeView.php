@@ -23,6 +23,7 @@ if($data["recipes"]) {
                         if($_SESSION['user']->getUserId() == $recipe->getUserId()) {
                              ?>
                             <p><a class="btn" href="EditRecipe.php?id=<?php echo $recipe->getId(); ?>">edit recipe</a></p>
+                            <p><a class="btn" href="DeleteRecipe.php?id=<?php echo $recipe->getId(); ?>">delete recipe</a></p>
                     <?php }} ?>
                 </div>
             </div>

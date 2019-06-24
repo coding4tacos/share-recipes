@@ -8,9 +8,9 @@ if(isset($_GET['id'])) {
 
 class ViewRecipe {
     public function execute(){
+        global $id;
         $dao=new RecipeDAO();
-        // i imagine the following line isn't the best way 
-        $recipes=$dao->read($_GET['id']);
+        $recipes=$dao->read($id);
         
         $view=new View();
         $view->add("recipes",$recipes);

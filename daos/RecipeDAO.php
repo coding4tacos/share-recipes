@@ -88,10 +88,9 @@ class RecipeDAO {
     }
     
     public function update($recipe){
-        
         $con = $this->con;
         
-        // prepare and bind  // THIS MIGHT NOT BE RIGHT
+        // prepare and bind
         $stmt = $con->prepare("UPDATE recipes SET name=?, description=?, ingredients=?, instructions=?, img=? where id=?");
         $stmt->bind_param("sssssi", $name, $desc, $ingredients, $instructions, $img, $id);
 
@@ -103,14 +102,15 @@ class RecipeDAO {
         $img = $recipe->getImg();
         $id = $recipe->getId();
         
-        $stmt->execute();
-                
-/*
-        
-        $sql="update recipes set name='{$recipe->getName()}',description='{$recipe->getDescription()}',ingredients='{$recipe->getIngredients()}', instructions='{$recipe->getInstructions()}', img='{$recipe->getImg()}' where id={$recipe->getId()}";
-        echo $sql;
-        $this->con->query($sql);
-         */
-         
+        $stmt->execute();      
     }  
+    
+    public function delete($id) {
+        $con = $this->con;
+        $stmt = $con->prepare("DELETE FROM recipes WHERE id=?");
+        $stmt->bind_param("i", $id);
+        
+        
+        $stmt->execute();
+    }
 }

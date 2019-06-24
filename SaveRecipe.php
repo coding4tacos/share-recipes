@@ -1,4 +1,3 @@
-
 <?php
 include './models/User.php';
 include './models/Recipe.php';
@@ -7,7 +6,7 @@ session_start();
 
 ini_set("display_errors",true);
 include_once("config/Config.php");
-class AddRecipeController{
+class SaveRecipeController{
     
     public function execute(){
         $view=new View();
@@ -25,7 +24,7 @@ class AddRecipeController{
         $view->render("ConfirmNewRecipe.php");
     }
 }
-$c=new AddRecipeController(); 
+$c=new SaveRecipeController(); 
 $c->execute();
 
 ?>

@@ -17,12 +17,12 @@ class SaveEdit {
       
         $recipe=new Recipe($_POST["id"],$_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->getEmail(), $_POST["instructions"]);
         $dao->update($recipe);
-        /*
+        
         
         $recipe->setImg($recipe->getId().".".$extension);
         $dao->update($recipe);
         move_uploaded_file($_FILES["image"]["tmp_name"],"img/".$recipe->getImg());
-        */
+        
         $view->render("ConfirmNewRecipe.php");
     }
     
