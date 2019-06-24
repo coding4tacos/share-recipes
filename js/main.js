@@ -170,13 +170,27 @@ const registerPage = document.querySelector('main.register'),
                     recipeImage.style.borderBottom = 'none';
                     warningMsg.textContent = null;
                     }, 3500);
-                 } 
- 
-                  
-   }
+                 }           
+            }
        recipeForm.addEventListener("submit", validateNewRecipe);
     }
+    // END VALIDATION
+    
+    
+    
+    
+    // CONFIRM DELETE RECIPE
+    const singleRecipePg = document.getElementById('single-recipe-pg'),
+          deleteRecipeBtn = document.querySelector('.delete-recipe');
+          
+    function confirmDeleteRecipe(e) {
+       // confirm('Delete recipe?');
+    }
          
-         
-        // END VALIDATION
+    
+    if(singleRecipePg) {
+       
+       // deleteRecipeBtn.addEventListener('click', confirmDeleteRecipe);
+
+    }
 })();

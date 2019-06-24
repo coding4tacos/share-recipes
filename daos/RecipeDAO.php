@@ -87,6 +87,23 @@ class RecipeDAO {
         return $recipes;
     }
     
+    public function readUserRecipes() {
+        $con = $this->con;
+        $recipes = null;
+        
+        // prepare and bind
+        $stmt = $con->prepare("SELECT * FROM recipes WHERE userId=? ORDER BY time_inserted DESC");
+        $stmt->bind_param("i", $userId);
+        
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        if($r=$rs->fetch_assoc()){
+            $recipes[]=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
+        }
+        $rs->free();
+        return $recipes;
+    }
+    
     public function update($recipe){
         $con = $this->con;
         
@@ -109,8 +126,6 @@ class RecipeDAO {
         $con = $this->con;
         $stmt = $con->prepare("DELETE FROM recipes WHERE id=?");
         $stmt->bind_param("i", $id);
-        
-        
         $stmt->execute();
     }
 }

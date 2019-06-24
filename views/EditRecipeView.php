@@ -11,12 +11,16 @@
 
 <?php include 'Header.php'; ?>
      <main class="add-recipe">
-          <div class="container">
+          <div class="container edit-recipe">
               <div class="section-header">
                     <h3 class="pad-bottom">Edit Recipe</h3>
                 </div>
                <div class="recipe-form-wrap">
                     <form class="add-recipe-form" id="add-recipe-form" action="SaveEdit.php" method="POST" enctype="multipart/form-data">
+                        <?php if(isset($_SESSION['user'])){
+                            if($_SESSION['user']->getUserId() == $recipe->getUserId()) { ?>
+                                <p class="text-right"><a class="btn btn-danger" onclick="return confirm('Delete recipe?')" href="DeleteRecipe.php?id=<?php echo $recipe->getId(); ?>">delete recipe</a></p>
+                        <?php }} ?>
                         <input type="hidden" name="id" value="<?php echo $recipe->getId(); ?>" />
                          <div class="form-field">
                              <div class="warning-message"></div>

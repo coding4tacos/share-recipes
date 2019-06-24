@@ -2,6 +2,11 @@
 ini_set("display_errors",true);
 include_once("config/Config.php");
 
+ session_start();
+if(isset($_SESSION["user"])){ 
+    $user=$_SESSION["user"];
+}
+
 class indexController {  
     public function execute(){
         $dao=new RecipeDAO();
