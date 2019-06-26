@@ -5,9 +5,7 @@ include_once("config/Config.php");
 
 if(isset($_GET['id'])) {  
    $id = $_GET['id'];
-} else {
-    echo 'no get id';
-}
+} 
 
 class EditRecipe {
     public function execute(){

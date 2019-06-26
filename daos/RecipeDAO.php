@@ -17,12 +17,12 @@ class RecipeDAO {
         $this->con=DB::getDbCon();
     }
     
-    public function create($recipe) {
+    public function create($recipe,$user) {
         $con = $this->con;
-        
+        // SOMETHING MUST CHANGE HERE I THINK
         // prepare and bind
-        $stmt = $con->prepare("INSERT INTO recipes (name, description, ingredients, instructions, img) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $name, $desc, $ingredients, $instructions, $img);
+        $stmt = $con->prepare("INSERT INTO recipes (userid, name, description, ingredients, instructions, img) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("isssss",$user->getUserId(), $name, $desc, $ingredients, $instructions, $img);
         
         // set params & execute
         $name = $recipe->getName();
@@ -92,16 +92,19 @@ class RecipeDAO {
         $recipes = null;
         
         // prepare and bind
-        $stmt = $con->prepare("SELECT * FROM recipes WHERE userId=? ORDER BY time_inserted DESC");
-        $stmt->bind_param("i", $userId);
+        $stmt=$con->prepare("SELECT * FROM recipes WHERE username=?");
+        $stmt->bind_param("s", $username);
+        $username = $_SESSION["user"]->getUsername();
+        
+        echo $username;
         
         $stmt->execute();
-        $rs=$stmt->get_result();
-        if($r=$rs->fetch_assoc()){
+        $recipes=[];
+
+       /* while(count($r) > 0){
             $recipes[]=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
         }
-        $rs->free();
-        return $recipes;
+        return $recipes; */
     }
     
     public function update($recipe){

@@ -2,18 +2,23 @@
 ini_set("display_errors",true);
 include_once("config/Config.php");
 
-class ViewRecipes {  
+ session_start();
+if(isset($_SESSION["user"])){ 
+    $user=$_SESSION["user"];
+}
+
+class ViewUserRecipesController {  
     public function execute(){
         
         $dao=new RecipeDAO();
-        $recipes=$dao->readAll();
+        $recipes=$dao->readUserRecipes();
         
         $view=new View();
         $view->add("recipes",$recipes);
-        $view->render("AllRecipesView.php");
+        $view->render("UserRecipesView.php");
     } 
 }
 
-$c=new ViewRecipes();
+$c=new ViewUserRecipesController();
 $c->execute();
 ?>

@@ -11,11 +11,12 @@ class SaveRecipeController{
     public function execute(){
         $view=new View();
         $dao=new RecipeDAO();  
+        $user=$_SESSION["user"];
         
         $extension=pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION);
          
         $recipe=new Recipe(-1,$_POST["name"],$_POST["description"],$_POST["ingredients"], $_SESSION["user"]->getEmail(), $_POST["instructions"]);
-        $dao->create($recipe);
+        $dao->create($recipe,$user);
         
         $recipe->setImg($recipe->getId().".".$extension);
         $dao->update($recipe);

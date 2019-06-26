@@ -4,6 +4,7 @@ if($data["recipes"]) {
 };
 ?>
 <?php include 'Header.php'; ?>
+
     <main id="single-recipe-pg">
         <div class="container">
             <div class="section-header">
@@ -20,7 +21,7 @@ if($data["recipes"]) {
                     <h3>Instructions:</h3>
                     <p class="pad-bottom"><?php echo $recipe->getInstructions(); ?></p>
                     <?php if(isset($_SESSION['user'])){
-                        if($_SESSION['user']->getUserId() == $recipe->getUserId()) {
+                        if($_SESSION['user']->getUserId() === $recipe->getUserId()) {
                              ?>
                             <p>
                                 <a class="btn" href="EditRecipe.php?id=<?php echo $recipe->getId(); ?>">edit recipe</a>

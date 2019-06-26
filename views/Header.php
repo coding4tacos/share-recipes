@@ -37,7 +37,7 @@ global $data;
                 <li><a href="ViewRecipes.php" class="nav-link">All Recipes</a></li>
                 <?php if(isset($_SESSION['user'])) : ?>
                     <li><a href="./AddRecipe.php" class="nav-link">Add Recipe</a></li>
-                    <li><a href="#" class="nav-link">My Recipes</a></li>
+                    <li><a href="UserRecipes.php" class="nav-link">My Recipes</a></li>
                     <li><a href="Logout.php" class="nav-link">Logout</a></li>
                  <?php else : ?>
                     <li><a href="Register.php" class="nav-link">Sign-up</a></li>
