@@ -11,9 +11,10 @@ class UserDAO {
         $con = $this->con;
         $password=hash("sha256",self::SALT.$password);
         // prepare and bind
-        $stmt = $con->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $email, $username, $password);
+        $stmt = $con->prepare("INSERT INTO users (id, email, username, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("isss", $id, $email, $username, $password);
 
+        $id = $user->getUserId();
         $email = $user->getEmail();
         $username = $user->getUsername();
         $password = $password;

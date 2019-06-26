@@ -18,19 +18,21 @@ class RecipeDAO {
     }
     
     public function create($recipe,$user) {
+        var_dump($user->getUserId());
         $con = $this->con;
         // SOMETHING MUST CHANGE HERE I THINK
         // prepare and bind
         $stmt = $con->prepare("INSERT INTO recipes (userid, name, description, ingredients, instructions, img) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("isssss",$user->getUserId(), $name, $desc, $ingredients, $instructions, $img);
+        $stmt->bind_param("isssss",$userId, $name, $desc, $ingredients, $instructions, $img);
+
         
         // set params & execute
+        $userId = $user->getUserId();
         $name = $recipe->getName();
         $desc = $recipe->getDescription();
         $ingredients = $recipe->getIngredients();
         $instructions = $recipe->getInstructions();
         $img = $recipe->getImg();
-        echo $img;
         
         $stmt->execute();
     

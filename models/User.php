@@ -6,10 +6,10 @@ class User {
     private $username;
     private $id;
    
-    function __construct($email, $username,$id) {
+    function __construct($email, $username, $id) {
         $this->email = $email;
         $this->username = $username;
-        $this->id=$id;
+        $this->id=$id; 
     }
     
     function getEmail() {
