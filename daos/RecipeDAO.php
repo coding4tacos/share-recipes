@@ -3,9 +3,8 @@
 /*
 DAO = Data Access Object
  * 
- * Contiene la inteligencia necesaria para comunicarse con la base de datos.
+ * logic for connecting to DB.
  * 
- * Implementaresmos el paradigma CRUD = Create Read Update Delete
  */
 
 
@@ -18,7 +17,6 @@ class RecipeDAO {
     }
     
     public function create($recipe,$user) {
-        var_dump($user->getUserId());
         $con = $this->con;
         // SOMETHING MUST CHANGE HERE I THINK
         // prepare and bind
@@ -79,7 +77,7 @@ class RecipeDAO {
         $con = $this->con; 
         $recipe=null;
         
-        $sql="select * from recipes order by time_inserted desc limit 0,3";
+        $sql="SELECT * FROM recipes ORDER BY time_inserted DESC LIMIT 0,3";
         $rs=$con->query($sql);
         $recipes=[];
         while($r=$rs->fetch_assoc()){
@@ -89,24 +87,23 @@ class RecipeDAO {
         return $recipes;
     }
     
-    public function readUserRecipes() {
+    public function readUserRecipes($id) {
         $con = $this->con;
         $recipes = null;
-        
+               
         // prepare and bind
-        $stmt=$con->prepare("SELECT * FROM recipes WHERE username=?");
-        $stmt->bind_param("s", $username);
-        $username = $_SESSION["user"]->getUsername();
-        
-        echo $username;
+        $stmt = $con->prepare("SELECT id, name, description, ingredients, userId, instructions,img FROM recipes WHERE userId=?");
+        $stmt->bind_param("i", $userId);
+        $userId = $id;
         
         $stmt->execute();
-        $recipes=[];
-
-       /* while(count($r) > 0){
-            $recipes[]=new Recipe($r["id"],$r["name"],$r["description"],$r["ingredients"],$r["userId"],$r["instructions"], $r["img"]);
+        $stmt->bind_result($recipId, $name, $description, $ingredients, $userId, $instructions, $img);
+        $recipes = [];
+        while($stmt->fetch()){
+            
+            $recipes[]=new Recipe($recipId, $name, $description, $ingredients, $userId, $instructions, $img);
         }
-        return $recipes; */
+        return $recipes; 
     }
     
     public function update($recipe){

@@ -2,7 +2,6 @@
 if(isset($_SESSION["user"])){ 
     $user=$_SESSION["user"];
 }
-
 ?>
 <?php include 'Header.php'; ?>
 <main id="all-recipes-pg">
