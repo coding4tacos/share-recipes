@@ -1,9 +1,9 @@
 <?php
-$DB_HOST="localhost";
-define("DB_HOST","localhost");
-define("DB_USER","recipes");
-define("DB_PWD","1234");
-define("DB_DB","recipes");
+$DB_HOST="heroku";
+define("DB_HOST","us-cdbr-iron-east-02.cleardb.net");
+define("DB_USER","b5302fa7caa11d");
+define("DB_PWD","70270cde");
+define("DB_DB","heroku_348a6ba98279c74");
 
 
 
