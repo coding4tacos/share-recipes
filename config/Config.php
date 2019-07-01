@@ -1,11 +1,11 @@
 <?php
-$DB_HOST="heroku";
+$DB_HOST="clearDB";
 define("DB_HOST","us-cdbr-iron-east-02.cleardb.net");
-define("DB_USER","b5302fa7caa11d");
-define("DB_PWD","70270cde");
-define("DB_DB","heroku_348a6ba98279c74");
+define("DB_USER","bc7ffdb6b51c08");
+define("DB_PWD","e675bedb");
+define("DB_DB","heroku_cc0edd7777cf42d");
 
-
+// mysql://bc7ffdb6b51c08:e675bedb@us-cdbr-iron-east-02.cleardb.net/heroku_cc0edd7777cf42d?reconnect=true
 
 class AutoLoader{
     private static $classesAddr=[
