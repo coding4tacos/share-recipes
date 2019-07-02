@@ -16,9 +16,9 @@ class DeleteRecipe {
         global $id; 
         $view=new View();
         $dao=new RecipeDAO();  
-        $recipes=$dao->delete($id);
+        $dao->delete($id);
         
-        $view->render("ConfirmNewRecipe.php");
+        $view->render("recipeDeleted.php");
     }
     
 }

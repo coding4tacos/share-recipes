@@ -9,8 +9,6 @@ class indexController {
         $recipes=$dao->readFeatured();
         $allRecipes=$dao->readAll();
         
-        // var_dump($allRecipes);
-
         $view=new View();
         $view->add("recipes",$recipes);
         $view->add("allRecipes", $allRecipes);

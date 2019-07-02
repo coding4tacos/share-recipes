@@ -26,7 +26,7 @@ include 'Header.php'; ?>
             <?php } ?>
         </div><!-- End Featured Recipes -->
 
-        <section class="random-featured-recipe">
+       <section class="random-featured-recipe">
             <div class="section-header">
                 <h2>Featured Recipe - <span class="text-green"><?php echo $randomRecipe->getName(); ?></span></h2>
                 <p class="recipe-description"><?php echo $randomRecipe->getDescription(); ?></p>
